@@ -1,0 +1,1 @@
+// When liveGame is true timer should start, when the timer reaches zero or the user changes URL, liveGame should be false 

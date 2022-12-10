@@ -6,7 +6,7 @@ export function Navigation() {
         <nav>
             <ul>
                 <li>
-                    <Link to="/">Back to Tim's Office</Link>
+                    <Link to="/">Exit the lab</Link>
                 </li>
             </ul>
         </nav>

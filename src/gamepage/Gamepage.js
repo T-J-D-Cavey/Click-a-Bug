@@ -1,13 +1,20 @@
 import {Navigation} from './gamepageComponents/Navigation';
 import {Outlet} from 'react-router-dom';
-import {Game} from './gamepageComponents/Game';
+import {Game} from './gamepageComponents/game/Game';
 import {StartGame} from './gamepageComponents/StartGame';
+import {Timer} from './gamepageComponents/Timer';
+import {Score} from './gamepageComponents/Score';
+import {LivesLeft} from './gamepageComponents/LivesLeft';
 
 export function Gamepage() {
     return (
         <div className='component-container'>
-            <Navigation />
-            {/* I will need to add the Timer, Score  and LivesLeft componants here */}
+            <div className="flex">
+               <Navigation />
+               <Timer />
+               <Score />
+               <LivesLeft />    
+            </div>
             <Outlet />
         </div>
     )

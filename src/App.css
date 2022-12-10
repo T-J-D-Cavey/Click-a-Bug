@@ -5,3 +5,11 @@
 /* Need to create appearence styles */
 
 /* Need to create media query for desktop sizes */
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+ul {
+    list-style: none;
+}

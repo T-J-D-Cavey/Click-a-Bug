@@ -1,12 +1,13 @@
 import {Route, Routes} from 'react-router-dom';
-import './App.css';
 import {Homepage} from './homepage/Homepage';
 import {Gamepage} from './gamepage/Gamepage';
 import {StartGame} from './gamepage/gamepageComponents/StartGame';
-import {Game} from './gamepage/gamepageComponents/Game';
+import {Game} from './gamepage/gamepageComponents/game/Game';
 import {NotFound} from './notFound/NotFound';
+import './App.css';
 
 function App() {
+
   return (
     <Routes>
       <Route path="/" element={<Homepage />} />
