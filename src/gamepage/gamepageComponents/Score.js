@@ -1,5 +1,10 @@
+import { useSelector} from 'react-redux';
+import { scoreSelector } from '../../redux/scoreSlice';
+
 export function Score() {
+    const currentScore = useSelector(scoreSelector);
+
     return (
-        <div>0000</div>
+        <div>{currentScore}</div>
     )
 }

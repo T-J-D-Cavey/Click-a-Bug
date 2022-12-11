@@ -1,7 +1,7 @@
 import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
-    randomIndex: 8,
+    randomIndex: null,
     liveGame: false
 }
 
