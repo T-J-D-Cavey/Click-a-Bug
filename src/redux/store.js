@@ -7,7 +7,7 @@ export const store = configureStore({
     reducer: {
         grid: gridReducer,
         score: scoreReducer,
-        timer: timerReducer
+        // timer: timerReducer
     }
 })
 

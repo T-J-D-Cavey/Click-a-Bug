@@ -1,39 +1,15 @@
-import { useState, useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { startGame, endGame } from "../../redux/gridSlice";
-import { decrementTimer, timeSelector } from "../../redux/timerSlice";
+import { useSelector } from "react-redux";
+import { startGame } from "../../redux/gridSlice";
+import { liveGameSelector } from "../../redux/gridSlice";
 
-// remove the {timer} prop from Timer function below:
-export function Timer() {
+export function Timer({timer}) {
 
-    const dispatch = useDispatch();
-    // const [countdown, setCountdown] = useState(300);
-    const timerId = useRef();
-    const timerSlicetime = useSelector(timeSelector);
-
-    useEffect(() => {
-        timerId.current = setInterval(() => {
-            timerSlicetime - 1
-            dispatch(decrementTimer(countdown))
-
-        }, 1000)
-        return () => clearInterval(timerId.current)
-    }, [startGame])
-
-    useEffect(() => {
-        if (countdown <= 0) {
-            clearInterval(timerId.current);
-            alert('End game message to be written');
-            dispatch(endGame());
-            setCountdown(300);
-            // need to change page location to previous page
-        }
-    }, [timerSlicetime])
-
+    const liveGame = useSelector(liveGameSelector);
 
     return (
-        // <div>tbc</div>
-        <div>{timerSlicetime}</div>
+        <div>
+            {!liveGame? <div>Countdown to show here!</div> : <div>Countdown: {timer}</div>}
+        </div>
     )
 }
 
