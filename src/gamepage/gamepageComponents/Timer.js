@@ -12,5 +12,3 @@ export function Timer({timer}) {
         </div>
     )
 }
-
-// we have a live game state to use to start and stop the timer, each are an action, and another action is resetTimer which will be triggered when playgame button is clicked in StartGame

@@ -1,5 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {increaseScore, scoreSelector} from '../../../redux/scoreSlice';
+import {increaseScore, scoreSelector, loseALife} from '../../../redux/scoreSlice';
+
 
 
 export function BugItem({handleDispatch}) {
@@ -14,7 +15,7 @@ export function BugItem({handleDispatch}) {
     const handleBadClick = (e) => {
         e.preventDefault();
         handleDispatch();
-        // Need to dispatch to livesLeft to reduce by one
+        dispatch(loseALife());
     }
     const sometimesFalse = () => {
         let n;

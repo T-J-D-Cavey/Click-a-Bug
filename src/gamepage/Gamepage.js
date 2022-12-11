@@ -1,47 +1,45 @@
 import { useState, useEffect, useRef } from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {startGame, endGame} from '../redux/gridSlice';
+import { useNavigate } from 'react-router-dom';
+import {endGame} from '../redux/gridSlice';
 import {Navigation} from './gamepageComponents/Navigation';
 import {Outlet} from 'react-router-dom';
-import {Game} from './gamepageComponents/game/Game';
-import {StartGame} from './gamepageComponents/StartGame';
 import {Timer} from './gamepageComponents/Timer';
 import {Score} from './gamepageComponents/Score';
-import {LivesLeft} from './gamepageComponents/LivesLeft';
+import { LivesLeft } from './gamepageComponents/LivesLeft';
+import {livesSelector} from '../redux/scoreSlice';
 import { liveGameSelector } from '../redux/gridSlice';
+import { resetScore } from '../redux/scoreSlice';
 
 export function Gamepage() {
     const dispatch = useDispatch();
     const [countdown, setCountdown] = useState(9999);
     const timerId = useRef();
     const liveGame = useSelector(liveGameSelector);
+    const livesLeft = useSelector(livesSelector);
+    const navigate = useNavigate();
 
-    // console.log(countdown)
-
+// Sets the counter to 300 after the player navigate to the game page
     if (liveGame && countdown > 300) {
-        // console.log(countdown)
         setCountdown(300)        
     }
-
+// Makes the counter reduce by 1 every second: 
     useEffect(() => {
         timerId.current = setInterval(() => {
             setCountdown(prev => prev - 1)
         }, 1000)
         return () => clearInterval(timerId.current)
     }, [])
-
+// Redirects to page unknown page when timer runs out or all lives are lost, and sets gameLive status to false, cleans up setInterval
     useEffect(() => {
-        if (countdown <= 0) {
+        if (countdown <= 0 || livesLeft < 1) {
             clearInterval(timerId.current);
-            // Need to check if countdown and alert still happen even if game ended or page URL changed
-            alert('End game message to be written');
             dispatch(endGame());
             setCountdown(300);
-            // need to change page location to previous page
+            dispatch(resetScore());
+            navigate('too-many-bugs-ahhhhhhhhhhhh')
         }
     }, [countdown])
-
-
 
     return (
         <div className='component-container'>
