@@ -18,7 +18,7 @@ export function Homepage() {
             </div>
             <div>
                 <footer>
-                    <p>To be replaced by a React Router LINK</p>
+                    <p>Footer here to link to github page</p>
                 </footer>
             </div>
 

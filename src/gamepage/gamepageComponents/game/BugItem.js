@@ -1,10 +1,9 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {increaseScore, scoreSelector, loseALife} from '../../../redux/scoreSlice';
 
-
-
 export function BugItem({handleDispatch}) {
     const dispatch = useDispatch();
+    const score = useSelector(scoreSelector);
     
     const handleClick = (e) => {
         e.preventDefault();
@@ -20,16 +19,15 @@ export function BugItem({handleDispatch}) {
     const sometimesFalse = () => {
         let n;
         n = Math.floor(Math.random() * 20);
-        if (n > 1) {
-            // When the timer and score state is defined, refine this so it returns false more often during higher scores and less time remaining; 
+        if (score > 800 && n > 7) {
+            return true;
+        } else if (n > 1) {
             return true;
         } 
         return false;
     }
 
    let showingBug = sometimesFalse()
-
-
 
     return (
         <div className='grid-item'>
