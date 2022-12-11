@@ -4,21 +4,28 @@ export function Homepage() {
     return (
         <div className='component-container'>
             <div>
-              <h1>Title</h1>
-              <button><Link to="/lab">Play Game</Link></button>                
+              <h1>Welcome to Click-a-Bug!</h1>
+              <button><Link to="/lab">PLAY GAME</Link></button>                
             </div>
             <div>
-                <h2>Hi there!</h2>
-                <div>
-                    <p>Intro paragraph to set the scene.</p>
+                <h2>Will you help us clear out the bugs?</h2>
+                <div className='div-container'>
+                    <p>Hi there!</p>
                     {/* <img>Show a pic of a bug square</img> */}
-                    <p>Explain the rules</p>
-                    <p>Intro to the score factor</p>
+                    <p>Professor Tim here, I run the computer science lab. 
+                        Thanks for helping us get rid of the computer bugs we have - they're everywhere!</p>
+                    <p>When you enter the servers room, you'll need all your software engineer skills to stop these bugs. 
+                        Get ready to click when you see any bug</p>
+                    <p>You'll only have a few minutes in there till they overpower you, so you better be quick! 
+                        But watch out, somethings in there aren't bugs and shouldn't be clicked!
+                        If you cause too much damage in there we'll need to find someone else...
+                    </p>
+                    <p>Come out and find me here when you're done, and good luck!</p>
                 </div>
             </div>
             <div>
                 <footer>
-                    <p>Footer here to link to github page</p>
+                   <p>See the <a href='https://github.com/T-J-D-Cavey' target='_blank'>creator's Github page here</a>.</p>
                 </footer>
             </div>
 

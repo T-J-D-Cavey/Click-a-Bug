@@ -21,16 +21,16 @@ export function StartGame() {
    
     <div>
        <h1>Well done, you got rid of the bugs!</h1>
-       <h2>Your score: {score}</h2>
-       <button onClick={handleClick}><Link to="/lab/game">Play again</Link></button>                
+       <h2>Your score was: {score}</h2>
+       <button onClick={handleClick}><Link to="/lab/game">PLAY AGAIN</Link></button>                
     </div> 
     )
   } else {
     return (
    
       <div>
-         <h1>Welcome to the lab...</h1>
-         <button onClick={handleClick}><Link to="/lab/game">Play Game</Link></button>                
+         <h1>Ready to start?</h1>
+         <button onClick={handleClick}><Link to="/lab/game">PLAY GAME</Link></button>                
       </div>
     )
   }

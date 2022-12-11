@@ -8,7 +8,7 @@ export function Timer({timer}) {
 
     return (
         <div>
-            {!liveGame? <div>Countdown to show here!</div> : <div>Countdown: {timer}</div>}
+            {!liveGame? <div>Countdown</div> : <div>{timer}</div>}
         </div>
     )
 }

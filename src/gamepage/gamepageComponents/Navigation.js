@@ -13,9 +13,11 @@ export function Navigation() {
         <nav>
             <ul>
                 <li>
-                    <Link onClick={handleClick}to="/">Exit the lab</Link>
+                    <Link onClick={handleClick}to="/">BACK</Link>
                 </li>
             </ul>
         </nav>
     )
 }
+
+// Try and replce the content of 'link' with an emojii or SVG of an exit door

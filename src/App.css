@@ -44,7 +44,7 @@ table {
 	border-spacing: 0;
 }
 
-/* ---------------------- => Structural and layout utility styles => */ 
+/* ---------------------- => Structural and layout-only styles => */ 
 .flex {
     display: flex;
     justify-content: space-between;
@@ -66,33 +66,58 @@ ul {
 }
 
 footer {
-    position: absolute;
-    bottom: 0
+    border-top: 1px solid #FFFFF6 ;
+    margin: 1rem 0;
+    padding: 1rem, 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 4rem;
+    text-align: center;
+
 }
 
-/* ---------------------- => Color and styles => */ 
+/* ---------------------- => Any other styles => */ 
 * {
     background-color: black;
 }
 
 div {
     color: #FFFFF6;
+    font-family: 'IBM Plex Mono', monospace;
+    text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
     color: #89209E;
     font-family: 'Press Start 2P', cursive;
+    margin: 2rem auto;    
+}
+
+h1 {
+    font-size: 2rem;
 }
 
 p, span {
     color: #FFFFF6;
     font-family: 'IBM Plex Mono', monospace;
+    padding: 1rem 0;
 }
 
 button, li, a {
     color: #84EB00;
     font-family: 'IBM Plex Mono', monospace;
-    font-weight: 1000;
+    font-weight: 1000;   
+    text-decoration: none;
+}
+
+button {
+    font-size: 1.5rem;
+
+}
+
+.div-container {
+    margin: 0.3rem;
 }
 
 

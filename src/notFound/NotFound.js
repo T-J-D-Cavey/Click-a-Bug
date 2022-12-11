@@ -9,5 +9,3 @@ export function NotFound() {
         </div>
     )
 }
-
-// I need to add some logic which accesds the user's browser history and populates the URL with the URL before the current one
