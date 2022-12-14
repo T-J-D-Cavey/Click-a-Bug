@@ -3,6 +3,7 @@ import {useDispatch, useSelector} from 'react-redux';
 import {startGame} from '../../redux/gridSlice';
 import { resetScore, scoreSelector, completedSelector } from '../../redux/scoreSlice';
 import professor from '../../Resources/Images/professor.svg';
+import { DoorIcon } from '../../Resources/SVGcomponents/DoorIcon';
 
 export function StartGame() {
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ export function StartGame() {
     return (
    
       <div>
-        <img className='professor-pic' src={professor} alt='professor'></img>
+        <img className='professorPic professorStart' src={professor} alt='professor'></img>
          <h1>Ready to start?</h1>
          <button onClick={handleClick}><Link to="/lab/game">PLAY GAME</Link></button>                
       </div>

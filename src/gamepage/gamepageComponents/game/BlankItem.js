@@ -7,5 +7,3 @@ export function BlankItem() {
         </div>
     )
 }
-
-// Need to add server icons here

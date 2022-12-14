@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {increaseScore, scoreSelector, loseALife} from '../../../redux/scoreSlice';
 import { BugOne } from '../../../Resources/SVGcomponents/BugOne';
 import professor from '../../../Resources/Images/professor.svg';
+import bugTwo from '../../../Resources/Images/bugTwo.svg';
 
 export function BugItem({handleDispatch}) {
     const dispatch = useDispatch();
@@ -34,9 +35,9 @@ export function BugItem({handleDispatch}) {
     return (
         <div>
             {showingBug ? 
-            <button className='gridItem bugItem' onClick={handleClick}><BugOne /></button> 
+            <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugTwo' src={bugTwo} alt='bug'></img></button> 
             : 
-            <button className='gridItem nonBugItem' onClick={handleBadClick}><img className='grid-professor' src={professor} alt='professor'></img></button>}
+            <button className='gridItem nonBugItem' onClick={handleBadClick}><img className='gridProfessor' src={professor} alt='professor'></img></button>}
         </div>
     )
 }

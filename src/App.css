@@ -71,7 +71,13 @@ table {
     padding: 0;
 }
 
+.gridBugTwo {
+    width: 100%;
+}
 
+.gridBugTwo:hover {
+/* When time, add a transition here to make the bug twitch when hovered over it */
+}
 
 
 
@@ -91,8 +97,16 @@ footer {
 
 }
 
-.professor-pic {
+.professorPic {
     width: 200px;
+}
+
+.professorStart {
+    margin-top: 2rem;
+}
+
+.DoorIcon {
+    width: 30px;
 }
 
 /* ---------------------- => Any other styles => */ 
@@ -130,7 +144,7 @@ button, li, a {
 }
 
 button {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
 
 }
 
@@ -142,7 +156,9 @@ button {
     color: #89209E;
     }
     
-
+.notFoundText {
+    margin: 2rem 0
+}
 
 /* Need to create media query for desktop sizes */
 
@@ -150,13 +166,65 @@ button {
     .grid {
         margin: 3rem auto 3rem auto;
     } 
+
+    .DoorIcon {
+        width: 40px;
+    }
 }
 
 /* I need to put this styling in the right area!!!!! */
 
-/* .BugOneSVG {
-    height: 80px;
-} */
+.BugOne {
+    position: absolute;
+    /* right: -1rem; */
+    top: 9rem;
+    width: 30px;
+    animation: bugmove 5s infinite linear;
+}
+
+@keyframes bugmove {
+    0% {
+
+        /* transform: rotate(-0.25turn); */
+    }
+    10% {
+        transform: translate(-10vw, 40vh);
+        transform: rotate(-0.25turn);
+    }
+    20% {
+
+    }
+    30% {
+        transform: rotate(-0.25turn);       
+    }
+    40% {
+        transform: rotate(-0.25turn);
+    }
+    50% {
+        transform: rotate(-0.25turn);
+        transform: translate(-5rem);
+    }
+    60% {
+        transform: rotate(-0.25turn);
+    }
+    70% {
+        transform: rotate(-0.25turn);
+    }
+    80% {
+        transform: translate(-9rem);
+        transform: rotate(0.25turn);
+
+    }
+    90% {
+        
+        transform: translate(-1rem);
+    }
+    100% {
+        transform: rotate(0.25turn);
+        transform: translate(-2rem);
+
+    }
+}
 
 
 

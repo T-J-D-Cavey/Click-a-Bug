@@ -39,10 +39,11 @@ export function Gamepage() {
             dispatch(resetScore());
             navigate('too-many-bugs-ahhhhhhhhhhhh')
 // Here is where we should add the useNavigate hook inside a setInterval function, to redirect to the start page after 2 seconds
+// We should also create another IF which says if score is over 1000 and the timer runs out, don't send them to that 'too-many-bugs' page but to the start page with completed set to true
         }
     }, [countdown])
 
-// Here might be where we add an IF statement that if the score is >1000, generate an alert. 
+// Here might be where we add an IF statement that if the score is >1000, generate an alert. We need to import the score selector and place it in another useEffect to run with the change to score state
 
 
     return (

@@ -1,6 +1,7 @@
 import {Link} from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { endGame } from '../../redux/gridSlice';
+import { DoorIcon } from '../../Resources/SVGcomponents/DoorIcon';
 
 export function Navigation() {
 
@@ -13,7 +14,7 @@ export function Navigation() {
         <nav>
             <ul>
                 <li>
-                    <Link onClick={handleClick}to="/">BACK</Link>
+                    <Link onClick={handleClick}to="/"><DoorIcon /></Link>
                 </li>
             </ul>
         </nav>
