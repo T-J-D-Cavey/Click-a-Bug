@@ -66,8 +66,8 @@ export function Game() {
 
 
     return (
-        <div>
-            <div className='grid-container'>      
+        <div className='grid-container'>
+            <div className='grid'>      
                {gridArray.map((element, index) => element !== randomIndex ? <BlankItem key={index} /> : <BugItem handleDispatch={handleDispatch} key={index}/>)}
             </div>
             <button onClick={handleClick}><Link to="/lab">Speak to Tim</Link></button> 

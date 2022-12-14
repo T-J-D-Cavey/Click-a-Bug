@@ -1,7 +1,11 @@
+import { Server } from "../../../Resources/SVGcomponents/Server";
+
 export function BlankItem() {
     return (
-        <div className='grid-item'>
-            <button className='blankItem'>...</button>
+        <div >
+            <button className='gridItem blankItem'><Server /></button>
         </div>
     )
 }
+
+// Need to add server icons here

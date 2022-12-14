@@ -27,6 +27,9 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    max-width: 400px;
+    min-width: 230px;
+    margin: 0 auto;
 }
 ol, ul {
 	list-style: none;
@@ -50,16 +53,27 @@ table {
     justify-content: space-between;
 }
 
-.grid-container {
+.grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     height: 70vh;
-    margin-bottom: 1rem;
+    max-height: 350px;    
+    width: 100vw;
+    min-width: 240px;
+    max-width: 400px;
+    margin: 2rem auto 3rem auto;
 }
 
-.grid-item {
-    
+.gridItem {
+    width: 100%;
+    max-width: 80px;
+    height: 100%;
+    padding: 0;
 }
+
+
+
+
 
 ul {
     list-style: none;
@@ -75,6 +89,10 @@ footer {
     height: 4rem;
     text-align: center;
 
+}
+
+.professor-pic {
+    width: 200px;
 }
 
 /* ---------------------- => Any other styles => */ 
@@ -120,10 +138,25 @@ button {
     margin: 0.3rem;
 }
 
+.server {
+    color: #89209E;
+    }
+    
+
 
 /* Need to create media query for desktop sizes */
 
+@media screen and (min-width: 400px) {
+    .grid {
+        margin: 3rem auto 3rem auto;
+    } 
+}
 
+/* I need to put this styling in the right area!!!!! */
+
+/* .BugOneSVG {
+    height: 80px;
+} */
 
 
 

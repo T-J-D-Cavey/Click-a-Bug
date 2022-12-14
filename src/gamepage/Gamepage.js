@@ -38,8 +38,12 @@ export function Gamepage() {
             setCountdown(300);
             dispatch(resetScore());
             navigate('too-many-bugs-ahhhhhhhhhhhh')
+// Here is where we should add the useNavigate hook inside a setInterval function, to redirect to the start page after 2 seconds
         }
     }, [countdown])
+
+// Here might be where we add an IF statement that if the score is >1000, generate an alert. 
+
 
     return (
         <div className='component-container'>

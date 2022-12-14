@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {increaseScore, scoreSelector, loseALife} from '../../../redux/scoreSlice';
+import { BugOne } from '../../../Resources/SVGcomponents/BugOne';
+import professor from '../../../Resources/Images/professor.svg';
 
 export function BugItem({handleDispatch}) {
     const dispatch = useDispatch();
@@ -30,8 +32,11 @@ export function BugItem({handleDispatch}) {
    let showingBug = sometimesFalse()
 
     return (
-        <div className='grid-item'>
-            {showingBug ? <button className='bugItem' onClick={handleClick}>BUG Picture!</button> : <button className='nonBugItem' onClick={handleBadClick}>Not a bug!</button>}
+        <div>
+            {showingBug ? 
+            <button className='gridItem bugItem' onClick={handleClick}><BugOne /></button> 
+            : 
+            <button className='gridItem nonBugItem' onClick={handleBadClick}><img className='grid-professor' src={professor} alt='professor'></img></button>}
         </div>
     )
 }

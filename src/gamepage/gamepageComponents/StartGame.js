@@ -1,14 +1,14 @@
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
-import {liveGameSelector, startGame} from '../../redux/gridSlice';
+import {startGame} from '../../redux/gridSlice';
 import { resetScore, scoreSelector, completedSelector } from '../../redux/scoreSlice';
+import professor from '../../Resources/Images/professor.svg';
 
 export function StartGame() {
   const dispatch = useDispatch();
-  
-  const liveGame = useSelector(liveGameSelector);
   const score = useSelector(scoreSelector)
   const completed = useSelector(completedSelector);
+  
 
   const handleClick = (e) => {
      e.preventDefault()
@@ -29,6 +29,7 @@ export function StartGame() {
     return (
    
       <div>
+        <img className='professor-pic' src={professor} alt='professor'></img>
          <h1>Ready to start?</h1>
          <button onClick={handleClick}><Link to="/lab/game">PLAY GAME</Link></button>                
       </div>
