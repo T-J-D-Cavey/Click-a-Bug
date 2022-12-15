@@ -19,9 +19,9 @@ export function Gamepage() {
     const livesLeft = useSelector(livesSelector);
     const navigate = useNavigate();
 
-// Sets the counter to 300 after the player navigate to the game page
-    if (liveGame && countdown > 300) {
-        setCountdown(300)        
+// Sets the counter to 120s after the player navigates to the game page
+    if (liveGame && countdown > 120) {
+        setCountdown(120)        
     }
 // Makes the counter reduce by 1 every second: 
     useEffect(() => {

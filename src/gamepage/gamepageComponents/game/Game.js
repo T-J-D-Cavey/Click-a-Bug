@@ -40,17 +40,17 @@ export function Game() {
         if (score >= 1000) {
             intervalTime = 100000;
         } else if (score > 900) {         
-            intervalTime = 500;
+            intervalTime = 530;
         } else if (score > 750) {         
-            intervalTime = 750;
+            intervalTime = 600;
         } else if (score > 500) {         
-            intervalTime = 1000;
+            intervalTime = 700;
         } else if (score > 250) {         
-            intervalTime = 2000;
+            intervalTime = 800;
         } else if (score > 100) {         
-            intervalTime = 3000;
+            intervalTime = 1000;
         } else {
-            intervalTime = 4000;
+            intervalTime = 1500;
             return;
         } 
     }, [score])
