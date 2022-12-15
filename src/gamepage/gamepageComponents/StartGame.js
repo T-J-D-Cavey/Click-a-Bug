@@ -5,9 +5,8 @@ import { resetScore, scoreSelector, completedSelector } from '../../redux/scoreS
 import professor from '../../Resources/Images/professor.svg';
 import { DoorIcon } from '../../Resources/SVGcomponents/DoorIcon';
 
-export function StartGame() {
+export function StartGame({setCountdown, countdown}) {
   const dispatch = useDispatch();
-  const score = useSelector(scoreSelector)
   const completed = useSelector(completedSelector);
   
 
@@ -15,6 +14,7 @@ export function StartGame() {
      e.preventDefault()
      dispatch(startGame());
      dispatch(resetScore());
+     setCountdown('0');
   }
    
   if (completed) {
@@ -22,7 +22,8 @@ export function StartGame() {
    
     <div>
        <h1>Well done, you got rid of the bugs!</h1>
-       <h2>Your score was: {score}</h2>
+       <h2>You completed click-a-bug in {120 - countdown} seconds!</h2>
+       <p>Can you beat your time?</p>
        <button onClick={handleClick}><Link to="/lab/game">PLAY AGAIN</Link></button>                
     </div> 
     )
