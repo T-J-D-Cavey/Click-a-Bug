@@ -17,13 +17,14 @@ export function Game() {
     let intervalTime;
        
 
-    const createRandomIndex = () => {
-        let n;
-        n = Math.floor(Math.random() * 16);
-        return n;
-    }
-
     const handleDispatch = () => {
+        // I recently moved this createRandomIndex function from outside to inside of this handleDispatch function to try and improve performance. 
+        // No apparent change. Look out for side affects. 
+        const createRandomIndex = () => {
+            let n;
+            n = Math.floor(Math.random() * 16);
+            return n;
+        }
         let n = createRandomIndex();        
         dispatch(setRandomIndex(n));
         if (score >= 1000) {
