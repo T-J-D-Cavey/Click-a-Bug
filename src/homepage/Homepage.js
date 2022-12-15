@@ -20,7 +20,7 @@ export function Homepage() {
                     <p>Professor Tim here, I run the computer science lab. 
                         Thanks for helping us get rid of the computer bugs we have - they're everywhere!</p>
                     <p>When you enter the servers room, you'll need all your software engineer skills to stop these bugs. 
-                        Get ready to click when you see any bug</p>
+                        Get ready to click when you see any bug.</p>
                     <p>You'll only have a few minutes in there till they overpower you, so you better be quick! 
                         But watch out, some things in there aren't bugs and shouldn't be clicked!
                         If you cause too much damage in there we'll need to find someone else...
