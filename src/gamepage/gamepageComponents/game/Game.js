@@ -5,7 +5,7 @@ import {BlankItem} from './BlankItem';
 import {BugItem} from './BugItem';
 import {randomIndexSelector, setRandomIndex} from '../../../redux/gridSlice';
 import {endGame} from '../../../redux/gridSlice';
-import { scoreSelector, completedGame } from '../../../redux/scoreSlice';
+import { scoreSelector, completedGame, decreaseScore } from '../../../redux/scoreSlice';
 
 export function Game() {
     const dispatch = useDispatch();
@@ -39,9 +39,10 @@ export function Game() {
         e.preventDefault();
         dispatch(endGame()); 
     }
-
-// Need to add a new action to the score slice to reduce the score by 10, import it here, and then add a handleClick function here which sends a dispatch, pass it as a prop to blank item, 
-// add an onCLick listner to the blankItem button which calls a function which invokes this handleClick function, so the score is reduced by 10
+// When someone clicks on a blank item (server) an onClick event handler calls the function below to reduce the state score by 10:
+    const handleDispatchDecreaseScore = () => {
+        dispatch(decreaseScore());
+    }
 
 // Need to change this to a Switch/Case:
     useEffect(() => {
@@ -71,11 +72,12 @@ export function Game() {
         return () => clearInterval(interval);
     }, [score]);
 
+    // Code below is an attempt to fix the flicky bug/professor grid item in BugItem. I will 
 
     return (
         <div className='grid-container'>
             <div className='grid'>      
-               {gridArray.map((element, index) => element !== randomIndex ? <BlankItem key={index} /> : <BugItem handleDispatch={handleDispatch} key={index}/>)}
+               {gridArray.map((element, index) => element !== randomIndex ? <BlankItem handleDispatchDecreaseScore={handleDispatchDecreaseScore} key={index} /> : <BugItem handleDispatch={handleDispatch} key={index}/>)}
             </div>
             <button onClick={handleSpeakToTimClick}><Link to="/lab">Speak to Tim</Link></button> 
         </div>

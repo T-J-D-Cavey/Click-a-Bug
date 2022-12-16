@@ -13,6 +13,9 @@ export const scoreSlice = createSlice({
         increaseScore: (state) => {
             state.score = state.score + 10;
         },
+        decreaseScore: (state) => {
+            state.score = state.score - 10;
+        },
         resetScore: (state) => {
             state.score = 0;
             state.completed = false;
@@ -39,6 +42,6 @@ export const completedSelector = (state) => {
     return state.score.completed;
 }
 
-export const {increaseScore, resetScore, completedGame, loseALife} = scoreSlice.actions;
+export const {increaseScore, decreaseScore, resetScore, completedGame, loseALife} = scoreSlice.actions;
 
 export const scoreReducer = scoreSlice.reducer;

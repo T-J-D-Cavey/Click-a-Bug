@@ -3,6 +3,7 @@ import {increaseScore, scoreSelector, loseALife} from '../../../redux/scoreSlice
 import { BugOne } from '../../../Resources/SVGcomponents/BugOne';
 import professor from '../../../Resources/Images/professor.svg';
 import bugTwo from '../../../Resources/Images/bugTwo.svg';
+import bugThree from '../../../Resources/Images/bugThree.svg';
 import { randomIndexSelector } from '../../../redux/gridSlice'; 
 
 // I suspect the logic in this function is the cause of a glitchy grid which sometimes renders a professor or a bug on the same index/gridItem. 
@@ -34,10 +35,31 @@ export function BugItem({handleDispatch}) {
         } 
         return false;
     }
-
-
-
     let showingBug = sometimesFalse()
+
+
+    // New code to get multiple pictures for pictures:
+
+    // const bugImageArray = [
+    //     <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugTwo' src={bugTwo} alt='bug'></img></button>,
+    //     <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugThree' src={bugThree} alt='bug'></img></button>,
+    //     <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugThree' src={bugThree} alt='bug'></img></button>  
+    // ]; 
+    // const choosePictureWithRandomIndex = () => {
+    //     let n;
+    //     n = Math.floor(Math.random() * 2)
+    //     return n;
+    // }
+    // let pictureIndex = choosePictureWithRandomIndex();
+    // console.log(pictureIndex);
+    // return (
+    //     <div>
+    //         {bugImageArray[pictureIndex]}
+    //     </div>
+    // )
+// End of code to get multiple picture
+
+
 
 
     return (

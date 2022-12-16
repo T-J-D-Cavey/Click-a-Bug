@@ -71,7 +71,7 @@ table {
     padding: 0;
 }
 
-.gridBugTwo {
+.gridBugTwo, .gridBugThree {
     width: 100%;
 }
 
