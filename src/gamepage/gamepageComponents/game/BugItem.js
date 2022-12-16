@@ -36,7 +36,7 @@ export function BugItem({handleDispatch}) {
         return false;
     }
     let showingBug = sometimesFalse()
-
+// testing git branch
 
     // New code to get multiple pictures for pictures:
 
