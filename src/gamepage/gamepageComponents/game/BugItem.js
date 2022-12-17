@@ -10,7 +10,7 @@ import { randomIndexSelector } from '../../../redux/gridSlice';
 // The reason for this I suspect is that the function runs several times and therefore sometimes the result of showingBug is true and sometimes it's false.
 // I tried to refactor the logic so that it runs in a useEffect whenever randomIndex changes, but this changed the showingBug variable after the render. So showing Bug was always false.
 // I need to think again about this to try and improve. Not a blocker as the game still functions. 
-export function BugItem({handleDispatch}) {
+export function BugItem({handleDispatch, showingBug}) {
     const dispatch = useDispatch();
     const score = useSelector(scoreSelector);
     
@@ -25,18 +25,17 @@ export function BugItem({handleDispatch}) {
         handleDispatch();
         dispatch(loseALife());
     }
-    const sometimesFalse = () => {
-        let n;
-        n = Math.floor(Math.random() * 20);
-        if (score > 800 && n > 7) {
-            return true;
-        } else if (n > 1) {
-            return true;
-        } 
-        return false;
-    }
-    let showingBug = sometimesFalse()
-// testing git branch
+    // const sometimesFalse = () => {
+    //     let n;
+    //     n = Math.floor(Math.random() * 20);
+    //     if (score > 800 && n > 7) {
+    //         return true;
+    //     } else if (n > 1) {
+    //         return true;
+    //     } 
+    //     return false;
+    // }
+    // let showingBug = sometimesFalse()
 
     // New code to get multiple pictures for pictures:
 

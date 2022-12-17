@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import {useEffect} from 'react';
 import {BlankItem} from './BlankItem';
 import {BugItem} from './BugItem';
-import {randomIndexSelector, setRandomIndex} from '../../../redux/gridSlice';
+import {randomIndexSelector, setRandomIndex, showingBugSelector, setShowingBug} from '../../../redux/gridSlice';
 import {endGame} from '../../../redux/gridSlice';
 import { scoreSelector, completedGame, decreaseScore } from '../../../redux/scoreSlice';
 
@@ -13,6 +13,7 @@ export function Game() {
     const gridArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     const navigate = useNavigate()
     let randomIndex = useSelector(randomIndexSelector);
+    const showingBug = useSelector(showingBugSelector);
     const score = useSelector(scoreSelector);
     let intervalTime;
        
@@ -72,12 +73,34 @@ export function Game() {
         return () => clearInterval(interval);
     }, [score]);
 
-    // Code below is an attempt to fix the flicky bug/professor grid item in BugItem. I will 
+    // Code below is an attempt to fix the flicky bug/professor grid item in BugItem. 
+    // I will unvoke within a useEffect (set to run after any changes in randomIndex state) a function that randomly chooses true and sometimes false, which 
+    // will be defined below this useEffect. Inside the useEffect I will send the dispatch the setShowingBug and pass it the value of the function (tbc if it goes within this)  
+
+    useEffect(() => {
+       const trueOrFalse = sometimesFalse();   
+       dispatch(setShowingBug(trueOrFalse));
+     }, [randomIndex]);
+
+     const sometimesFalse = () => {
+        let n;
+        n = Math.floor(Math.random() * 10);
+        if (score > 800 && n > 4) {
+            return true;
+        } else if (score > 400 && n > 2) {
+            return true;
+        } else if (n > 1) {
+            return true;
+        } 
+        console.log('was false')
+        return false;
+     }
+
 
     return (
         <div className='grid-container'>
             <div className='grid'>      
-               {gridArray.map((element, index) => element !== randomIndex ? <BlankItem handleDispatchDecreaseScore={handleDispatchDecreaseScore} key={index} /> : <BugItem handleDispatch={handleDispatch} key={index}/>)}
+               {gridArray.map((element, index) => element !== randomIndex ? <BlankItem handleDispatchDecreaseScore={handleDispatchDecreaseScore} key={index} /> : <BugItem showingBug={showingBug} handleDispatch={handleDispatch} key={index}/>)}
             </div>
             <button onClick={handleSpeakToTimClick}><Link to="/lab">Speak to Tim</Link></button> 
         </div>
