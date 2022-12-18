@@ -95,7 +95,7 @@ export function Game() {
 
      const randomIndexForBugItemFunction = () => {
         let n;
-        n = Math.floor(Math.random() * 3);
+        n = Math.floor(Math.random() * 10);
         return n;
      }
 

@@ -30,29 +30,25 @@ export function BugItem({handleDispatch, showingBug}) {
         handleDispatch();
         dispatch(loseALife());
     }
-    
- // New code to get multiple pictures for pictures:
 
+
+
+// Unable to create a working method of having this array in a seperate fill/function. It would only render the alt text and handleClick didn't work. 
+// Will include in github notes for anyone that wants the challenge. 
     const bugImageArray = [
-        <button className='gridItem bugItem' onClick={handleClick}><img className='gridBug' src={bug1} alt='bug'></img></button>,
-        <button className='gridItem bugItem' onClick={handleClick}><img className='gridBug' src={bug1} alt='bug'></img></button>,
-        <button className='gridItem bugItem' onClick={handleClick}><img className='gridBug' src={bug1} alt='bug'></img></button>  
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug rotateRight' src={bug1} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug2} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug rotateLeft' src={bug3} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug4} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug rotateLeft' src={bug5} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug6} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug7} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug8} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug rotateRight' src={bug9} alt='bug'></img></button>,
+       <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug10} alt='bug'></img></button>
     ]; 
 
-    console.log(randomIndexForBugItem);
-    // const choosePictureWithRandomIndex = () => {
-    //     let n;
-    //     n = Math.floor(Math.random() * 2)
-    //     return n;
-    // }
-    // let pictureIndex = choosePictureWithRandomIndex();
-    // console.log(pictureIndex);
-    // return (
-    //     <div>
-    //         {bugImageArray[randomIndexForBugItem]}
-    //     </div>
-    // )
-// End of code to get multiple picture
+
 
     return (
         <div>
@@ -63,13 +59,4 @@ export function BugItem({handleDispatch, showingBug}) {
         </div>
     )
 
-
-    // return (
-    //     <div>
-    //         {showingBug ? 
-    //         <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugTwo' src={bugTwo} alt='bug'></img></button> 
-    //         : 
-    //         <button className='gridItem nonBugItem' onClick={handleBadClick}><img className='gridProfessor' src={professor} alt='professor'></img></button>}
-    //     </div>
-    // )
 }
