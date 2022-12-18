@@ -10,7 +10,7 @@ export function NotFound() {
     useEffect(() => {
         const interval = setInterval(() => {
             navigate('lab');
-        }, 2000)
+        }, 4000)
         return () => clearInterval(interval)
     }, [])
 
@@ -19,8 +19,8 @@ export function NotFound() {
             <BugOne />
             <h1>The bugs are everywhere!!!</h1>
             <img className='professorPic' src={professorBugy} alt='professor'></img>
-            <p className='notFoundText'>Head back to see Tim</p>
-            <button><Link to="/">Back to the lab</Link></button>
+            <p className='notFoundText intro'>Have anoter go...</p>
+            <button><Link to="/">Try again</Link></button>
         </div>
     )
 }

@@ -108,12 +108,7 @@ export function Game() {
                : 
                <BugItem showingBug={showingBug} handleDispatch={handleDispatch} key={index}/>)}
             </div>
-            <button className='marginBottom' onClick={handleSpeakToTimClick}><Link to="/lab">Speak to Tim</Link></button> 
-            <footer>
-                <div className='imageAttributes'>
-                    <p><a href="https://www.freepik.com/free-vector/design-with-seamless-pattern-housefly_7033958.htm#query=insect%20svg&position=39&from_view=keyword">This image is by brgfx</a> on Freepik</p>
-                </div>
-            </footer>
+            <button className='marginBottom' onClick={handleSpeakToTimClick}><Link to="/lab">Exit servers room</Link></button> 
         </div>
     )
 }
