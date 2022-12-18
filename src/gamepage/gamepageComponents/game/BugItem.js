@@ -1,18 +1,23 @@
 import { useSelector, useDispatch } from 'react-redux';
 import {increaseScore, scoreSelector, loseALife} from '../../../redux/scoreSlice';
-import { BugOne } from '../../../Resources/SVGcomponents/BugOne';
+import { randomIndexForBugItemSelector } from '../../../redux/gridSlice';
 import professor from '../../../Resources/Images/professor.svg';
-import bugTwo from '../../../Resources/Images/bugTwo.svg';
-import bugThree from '../../../Resources/Images/bugThree.svg';
-import { randomIndexSelector } from '../../../redux/gridSlice'; 
+import bug1 from '../../../Resources/Images/bug1.svg';
+import bug2 from '../../../Resources/Images/bug2.svg';
+import bug3 from '../../../Resources/Images/bug3.svg';
+import bug4 from '../../../Resources/Images/bug4.svg';
+import bug5 from '../../../Resources/Images/bug5.svg';
+import bug6 from '../../../Resources/Images/bug6.svg';
+import bug7 from '../../../Resources/Images/bug7.svg';
+import bug8 from '../../../Resources/Images/bug8.svg';
+import bug9 from '../../../Resources/Images/bug9.svg';
+import bug10 from '../../../Resources/Images/bug10.svg';
 
-// I suspect the logic in this function is the cause of a glitchy grid which sometimes renders a professor or a bug on the same index/gridItem. 
-// The reason for this I suspect is that the function runs several times and therefore sometimes the result of showingBug is true and sometimes it's false.
-// I tried to refactor the logic so that it runs in a useEffect whenever randomIndex changes, but this changed the showingBug variable after the render. So showing Bug was always false.
-// I need to think again about this to try and improve. Not a blocker as the game still functions. 
+
 export function BugItem({handleDispatch, showingBug}) {
     const dispatch = useDispatch();
     const score = useSelector(scoreSelector);
+    const randomIndexForBugItem = useSelector(randomIndexForBugItemSelector);
     
     const handleClick = (e) => {
         e.preventDefault();
@@ -25,25 +30,16 @@ export function BugItem({handleDispatch, showingBug}) {
         handleDispatch();
         dispatch(loseALife());
     }
-    // const sometimesFalse = () => {
-    //     let n;
-    //     n = Math.floor(Math.random() * 20);
-    //     if (score > 800 && n > 7) {
-    //         return true;
-    //     } else if (n > 1) {
-    //         return true;
-    //     } 
-    //     return false;
-    // }
-    // let showingBug = sometimesFalse()
+    
+ // New code to get multiple pictures for pictures:
 
-    // New code to get multiple pictures for pictures:
+    const bugImageArray = [
+        <button className='gridItem bugItem' onClick={handleClick}><img className='gridBug' src={bug1} alt='bug'></img></button>,
+        <button className='gridItem bugItem' onClick={handleClick}><img className='gridBug' src={bug1} alt='bug'></img></button>,
+        <button className='gridItem bugItem' onClick={handleClick}><img className='gridBug' src={bug1} alt='bug'></img></button>  
+    ]; 
 
-    // const bugImageArray = [
-    //     <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugTwo' src={bugTwo} alt='bug'></img></button>,
-    //     <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugThree' src={bugThree} alt='bug'></img></button>,
-    //     <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugThree' src={bugThree} alt='bug'></img></button>  
-    // ]; 
+    console.log(randomIndexForBugItem);
     // const choosePictureWithRandomIndex = () => {
     //     let n;
     //     n = Math.floor(Math.random() * 2)
@@ -53,20 +49,27 @@ export function BugItem({handleDispatch, showingBug}) {
     // console.log(pictureIndex);
     // return (
     //     <div>
-    //         {bugImageArray[pictureIndex]}
+    //         {bugImageArray[randomIndexForBugItem]}
     //     </div>
     // )
 // End of code to get multiple picture
 
-
-
-
     return (
         <div>
             {showingBug ? 
-            <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugTwo' src={bugTwo} alt='bug'></img></button> 
+             bugImageArray[randomIndexForBugItem]
             : 
             <button className='gridItem nonBugItem' onClick={handleBadClick}><img className='gridProfessor' src={professor} alt='professor'></img></button>}
         </div>
     )
+
+
+    // return (
+    //     <div>
+    //         {showingBug ? 
+    //         <button className='gridItem bugItem' onClick={handleClick}><img className='gridBugTwo' src={bugTwo} alt='bug'></img></button> 
+    //         : 
+    //         <button className='gridItem nonBugItem' onClick={handleBadClick}><img className='gridProfessor' src={professor} alt='professor'></img></button>}
+    //     </div>
+    // )
 }

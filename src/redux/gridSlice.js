@@ -3,7 +3,8 @@ import {createSlice} from '@reduxjs/toolkit';
 const initialState = {
     randomIndex: null,
     liveGame: false,
-    showingBug: true
+    showingBug: true,
+    randomIndexForBugItem: 0
 }
 
 export const gridSlice = createSlice({
@@ -21,6 +22,9 @@ export const gridSlice = createSlice({
         },
         setShowingBug: (state, action) => {
             state.showingBug = action.payload;
+        },
+        setRandomIndexForBugItem: (state, action) => {
+            state.randomIndexForBugItem = action.payload;
         }
     }
 });
@@ -37,6 +41,10 @@ export const showingBugSelector = (state) => {
     return state.grid.showingBug;
 }
 
-export const {startGame, endGame, setRandomIndex, setShowingBug} = gridSlice.actions;
+export const randomIndexForBugItemSelector = (state) => {
+    return state.grid.randomIndexForBugItem;
+}
+
+export const {startGame, endGame, setRandomIndex, setShowingBug, setRandomIndexForBugItem} = gridSlice.actions;
 
 export const gridReducer = gridSlice.reducer; 

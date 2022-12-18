@@ -1,9 +1,8 @@
 import {Link} from 'react-router-dom';
 import {useDispatch, useSelector} from 'react-redux';
 import {startGame} from '../../redux/gridSlice';
-import { resetScore, scoreSelector, completedSelector } from '../../redux/scoreSlice';
+import { resetScore, completedSelector } from '../../redux/scoreSlice';
 import professor from '../../Resources/Images/professor.svg';
-import { DoorIcon } from '../../Resources/SVGcomponents/DoorIcon';
 
 export function StartGame({setCountdown, countdown}) {
   const dispatch = useDispatch();

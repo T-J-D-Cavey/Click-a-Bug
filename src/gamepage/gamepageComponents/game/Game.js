@@ -3,8 +3,7 @@ import {Link, useNavigate} from 'react-router-dom';
 import {useEffect} from 'react';
 import {BlankItem} from './BlankItem';
 import {BugItem} from './BugItem';
-import {randomIndexSelector, setRandomIndex, showingBugSelector, setShowingBug} from '../../../redux/gridSlice';
-import {endGame} from '../../../redux/gridSlice';
+import {randomIndexSelector, setRandomIndex, endGame, showingBugSelector, setShowingBug, setRandomIndexForBugItem} from '../../../redux/gridSlice';
 import { scoreSelector, completedGame, decreaseScore } from '../../../redux/scoreSlice';
 
 export function Game() {
@@ -73,36 +72,48 @@ export function Game() {
         return () => clearInterval(interval);
     }, [score]);
 
-    // Code below is an attempt to fix the flicky bug/professor grid item in BugItem. 
-    // I will unvoke within a useEffect (set to run after any changes in randomIndex state) a function that randomly chooses true and sometimes false, which 
-    // will be defined below this useEffect. Inside the useEffect I will send the dispatch the setShowingBug and pass it the value of the function (tbc if it goes within this)  
-
+    // Randomly chooses true and sometimes false, which gest dispatched as 'setShowingBug' to the grid slice;
     useEffect(() => {
-       const trueOrFalse = sometimesFalse();   
+       const trueOrFalse = sometimesFalse();  
+       const randomBugArrayIndex = randomIndexForBugItemFunction();
        dispatch(setShowingBug(trueOrFalse));
+       dispatch(setRandomIndexForBugItem(randomBugArrayIndex));
      }, [randomIndex]);
 
      const sometimesFalse = () => {
         let n;
-        n = Math.floor(Math.random() * 10);
+        n = Math.floor(Math.random() * 15);
         if (score > 800 && n > 4) {
             return true;
         } else if (score > 400 && n > 2) {
             return true;
-        } else if (n > 1) {
+        } else if (n >= 1) {
             return true;
         } 
-        console.log('was false')
         return false;
+     }
+
+     const randomIndexForBugItemFunction = () => {
+        let n;
+        n = Math.floor(Math.random() * 3);
+        return n;
      }
 
 
     return (
         <div className='grid-container'>
             <div className='grid'>      
-               {gridArray.map((element, index) => element !== randomIndex ? <BlankItem handleDispatchDecreaseScore={handleDispatchDecreaseScore} key={index} /> : <BugItem showingBug={showingBug} handleDispatch={handleDispatch} key={index}/>)}
+               {gridArray.map((element, index) => element !== randomIndex ? 
+               <BlankItem handleDispatchDecreaseScore={handleDispatchDecreaseScore} key={index} /> 
+               : 
+               <BugItem showingBug={showingBug} handleDispatch={handleDispatch} key={index}/>)}
             </div>
-            <button onClick={handleSpeakToTimClick}><Link to="/lab">Speak to Tim</Link></button> 
+            <button className='marginBottom' onClick={handleSpeakToTimClick}><Link to="/lab">Speak to Tim</Link></button> 
+            <footer>
+                <div className='imageAttributes'>
+                    <p><a href="https://www.freepik.com/free-vector/design-with-seamless-pattern-housefly_7033958.htm#query=insect%20svg&position=39&from_view=keyword">This image is by brgfx</a> on Freepik</p>
+                </div>
+            </footer>
         </div>
     )
 }
