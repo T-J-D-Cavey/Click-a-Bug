@@ -16,7 +16,6 @@ export function Homepage() {
                 <div className='div-container'>
                     <img className='professorPic' src={professor} alt='professor'></img>
                     <p>Hi there!</p>
-                    {/* <img>Show a pic of a bug square</img> */}
                     <p>Professor Tim here, I run the computer science lab. 
                         Thanks for helping us get rid of the computer bugs we have - they're everywhere!</p>
                     <p>When you enter the servers room, you'll need all your software engineer skills to stop these bugs. 

@@ -49,9 +49,9 @@ export function Game() {
         if (score >= 1000) {
             intervalTime = 100000;
         } else if (score > 900) {         
-            intervalTime = 550;
-        } else if (score > 750) {         
             intervalTime = 600;
+        } else if (score > 750) {         
+            intervalTime = 700;
         } else if (score > 500) {         
             intervalTime = 800;
         } else if (score > 250) {         
@@ -59,7 +59,7 @@ export function Game() {
         } else if (score > 100) {         
             intervalTime = 1000;
         } else {
-            intervalTime = 1100;
+            intervalTime = 1200;
             return;
         } 
     }, [score])
