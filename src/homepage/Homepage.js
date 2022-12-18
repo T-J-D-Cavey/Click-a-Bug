@@ -26,6 +26,9 @@ export function Homepage() {
                     </p>
                     <p className='intro'>Come and find me here when you're done, and good luck!</p>
                 </div>
+                <div>
+                    <button><Link to="/lab">PLAY GAME</Link></button>
+                </div>
             </div>
             <div>
                 <footer>

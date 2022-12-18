@@ -85,9 +85,9 @@ export function Game() {
         n = Math.floor(Math.random() * 15);
         if (score > 800 && n > 4) {
             return true;
-        } else if (score > 400 && n > 2) {
+        } else if (score > 400 && n > 3) {
             return true;
-        } else if (n >= 1) {
+        } else if (n > 2) {
             return true;
         } 
         return false;

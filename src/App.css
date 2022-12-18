@@ -85,7 +85,7 @@ table {
 }
 
 .twitch {
-    animation: bugTwitch 0.1s infinite linear;
+    animation: bugTwitch 0.05s infinite linear;
 }
 
 .rotateRight {
@@ -103,7 +103,7 @@ table {
     }
 
     50% {
-        transform: rotate(-0.005turn);
+        transform: rotate(-0.02turn);
     }
 
     100% {
@@ -249,13 +249,15 @@ button {
     }
 }
 
+/* ---------------------- => For non-game bug animation: =>*/
+
 .BugOne {
-    position: absolute;
-    rotate: 0.25turn;
-    left: -2rem;
-    top: 11rem;
-    width: 30px;
-    animation: bugmove 10s infinite ease-in-out;
+    position: sticky;
+    rotate: 0.5turn;
+    left: 0rem;
+    top:3rem;
+    width: 15px;
+    animation: bugmove 35s infinite ease-in-out;
 }
 
 @keyframes bugmove {
@@ -264,7 +266,7 @@ button {
     }
 
     100% {
-        translate: 110vw;
+        translate: 0 90vh;
     }
 }
 

@@ -25,7 +25,7 @@ function App() {
   
   // Sets the counter to 300 after the player navigate to the game page
     if (liveGame && countdown === '0') {
-      setCountdown(120)        
+      setCountdown(180)        
     }
   
   // Makes the counter reduce by 1 every second: 
@@ -42,7 +42,7 @@ function App() {
         if (countdown <= 0 || livesLeft < 1) {
             clearInterval(timerId.current);
             dispatch(endGame());
-            setCountdown(300);
+            setCountdown(180);
             dispatch(resetScore());
             navigate('too-many-bugs-ahhhhhhhhhhhh')
         }
