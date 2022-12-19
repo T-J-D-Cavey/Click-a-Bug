@@ -52,7 +52,7 @@ table {
     display: flex;
     justify-content: space-between;
 }
-
+/* Remote: Changed color to 'black', border to none */
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -63,6 +63,7 @@ table {
     max-width: 400px;
     margin: 2rem auto 3rem auto;
 	color: black;
+	border: none;
 }
 
 .gridItem {
@@ -188,7 +189,7 @@ p, span {
     line-height: 1.2rem;
     font-size: 1.2rem;      
     padding: 1rem 0;  
-}
+
 
 footer {
     border-top: 1px solid #FFFFF6 ;
@@ -201,12 +202,13 @@ footer {
     text-align: center;
     line-height: 1.5rem;
 }
-
+/* From remote: changed border to 'none' */
 button, li, a {
     color: #84EB00;
     font-family: 'IBM Plex Mono', monospace;
     font-weight: 1000;   
     text-decoration: none;
+	border: none;
 }
 
 button:hover, li:hover, a:hover {
