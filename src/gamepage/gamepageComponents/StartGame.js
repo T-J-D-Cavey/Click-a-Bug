@@ -23,7 +23,8 @@ export function StartGame({setCountdown, countdown}) {
     <div>
        <BugOne />
        <h1>Well done, you got rid of the bugs!</h1>
-       <h2>You completed click-a-bug in {120 - countdown} seconds!</h2>
+       <h2>You completed click-a-bug in {180 - countdown} seconds!</h2>
+       <p>You only had {countdown} seconds left!!</p>
        <p>Can you beat your time?</p>
        <button onClick={handleClick}><Link to="/lab/game">PLAY AGAIN</Link></button>                
     </div> 

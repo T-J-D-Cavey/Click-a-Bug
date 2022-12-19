@@ -42,8 +42,7 @@ export function BugItem({handleDispatch, showingBug}) {
     }
 
 
-// Unable to create a working method of having these arrays in a seperate file/function. It would only render the alt text and handleClick didn't work. 
-// Will include in github notes for anyone that wants the challenge. 
+// => Challenge: I was unable to create a working method of having these arrays in a seperate file/function. It would only render the alt text and handleClick didn't work.  
     const bugImageArray = [
         <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug1} alt='bug'></img></button>,
         <button className='gridItem appear bugItem' onClick={handleClick}><img className='gridBug twitch' src={bug2} alt='bug'></img></button>,
@@ -70,8 +69,6 @@ export function BugItem({handleDispatch, showingBug}) {
         <button className='gridItem nonBugItem' onClick={handleBadClick}><img  src={computer9} alt='computer'></img></button>
     ]
 
-
-
     return (
         <div>
             {showingBug ? 
@@ -81,5 +78,4 @@ export function BugItem({handleDispatch, showingBug}) {
             }
         </div>
     )
-
 }

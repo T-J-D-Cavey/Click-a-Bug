@@ -20,5 +20,3 @@ export function Navigation() {
         </nav>
     )
 }
-
-// Try and replce the content of 'link' with an emojii or SVG of an exit door

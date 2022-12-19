@@ -1,18 +1,18 @@
 import {Route, Routes} from 'react-router-dom';
+import { useState, useEffect, useRef } from 'react';
+import {useDispatch, useSelector} from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+
 import {Homepage} from './homepage/Homepage';
 import {Gamepage} from './gamepage/Gamepage';
 import {StartGame} from './gamepage/gamepageComponents/StartGame';
 import {Game} from './gamepage/gamepageComponents/game/Game';
 import {NotFound} from './notFound/NotFound';
-import './App.css';
-import { useState, useEffect, useRef } from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import {endGame} from './redux/gridSlice';
 import {livesSelector} from './redux/scoreSlice';
 import { liveGameSelector } from './redux/gridSlice';
 import { resetScore } from './redux/scoreSlice';
-
+import './App.css';
 
 function App() {
 

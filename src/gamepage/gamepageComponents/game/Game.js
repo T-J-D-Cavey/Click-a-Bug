@@ -8,7 +8,7 @@ import { scoreSelector, completedGame, decreaseScore } from '../../../redux/scor
 
 export function Game() {
     const dispatch = useDispatch();
-    // Look for a better way to generate this array with a method:
+    // => Challenge: Look for a better way to generate this array with a method:
     const gridArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
     const navigate = useNavigate()
     let randomIndex = useSelector(randomIndexSelector);
@@ -18,8 +18,6 @@ export function Game() {
        
 
     const handleDispatch = () => {
-        // I recently moved this createRandomIndex function from outside to inside of this handleDispatch function to try and improve performance. 
-        // No apparent change. Look out for side affects. 
         const createRandomIndex = () => {
             let n;
             n = Math.floor(Math.random() * 16);
@@ -44,7 +42,7 @@ export function Game() {
         dispatch(decreaseScore());
     }
 
-// Need to change this to a Switch/Case:
+// Reduced the gap between a new grid item change, depending on the score. 
     useEffect(() => {
         if (score >= 1000) {
             intervalTime = 100000;
@@ -108,7 +106,7 @@ export function Game() {
                : 
                <BugItem showingBug={showingBug} handleDispatch={handleDispatch} key={index}/>)}
             </div>
-            <button className='marginBottom' onClick={handleSpeakToTimClick}><Link to="/lab">Exit servers room</Link></button> 
+            <button className='marginBottom' onClick={handleSpeakToTimClick}><Link to="/lab">Exit</Link></button> 
         </div>
     )
 }

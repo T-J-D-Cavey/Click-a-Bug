@@ -8,18 +8,18 @@ export function Homepage() {
         <div className='component-container'>
             <BugOne /> 
             <div>
-              <h1>Welcome to Click-a-Bug!</h1>
+              <h1>Click-a-Bug!</h1>
               <button><Link to="/lab">PLAY GAME</Link></button>                
             </div>
             <div>
-                <h2>Will you help us clear out the bugs?</h2>
+                <h2>Help the professor fix these computer bugs before it's too late...</h2>
                 <div className='div-container'>
-                    <img className='professorPic' src={professor} alt='professor'></img>
+                    <img className='professorPic appear' src={professor} alt='professor'></img>
                     <p className='intro'>Hi there!</p>
-                    <p className='intro'>Professor Tim here, I run the computer science lab. 
+                    <p className='intro'>I'm Professor Tim. 
                         Thanks for helping us fix the bugs in our servers - they're everywhere!</p>
-                    <p className='intro'>When you access our servers, you'll need all your software engineer skills to fix these bugs. 
-                        Get ready to click when you see any bug.</p>
+                    <p className='intro'>You're going to need all your software engineer skills to fix these bugs. 
+                        Get ready to click whenever you see a bug.</p>
                     <p className='intro'>You'll only have a few minutes till they destroy everything, so you better be quick! 
                         But watch out, some things shouldn't be clicked!
                         If you cause too much damage we'll need to replace you...
