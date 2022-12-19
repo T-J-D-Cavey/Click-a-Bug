@@ -56,7 +56,8 @@ function App() {
         <Route index element={<StartGame countdown={countdown} setCountdown={setCountdown}/>}/>
         <Route path="/lab/game" element={<Game />}/>
       </Route>
-      <Route path="/*" element={<NotFound />}/>
+      <Route path="/too-many-bugs-ahhhhhhhhhhhh" element={<NotFound />}/>
+      <Route path="/*" element={<Homepage />}/>
     </Routes>
   );
 }

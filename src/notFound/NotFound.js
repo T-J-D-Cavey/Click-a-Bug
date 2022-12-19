@@ -20,7 +20,7 @@ export function NotFound() {
             <h1>The bugs are everywhere!!!</h1>
             <img className='professorPic appear' src={professorBugy} alt='professor'></img>
             <p className='notFoundText intro'>Run away. Save yourself!</p>
-            <button><Link to="/">Exit</Link></button>
+            {/* From local: hidden for time being: <button><Link to="/">Exit</Link></button> */}
         </div>
     )
 }
