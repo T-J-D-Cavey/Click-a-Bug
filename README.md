@@ -2,7 +2,7 @@
 
 Can you help professor Tim clear out the bugs from his computer servers?
 
-Click here and have a go: *link to be added*
+Click here and have a go: https://click-a-bug.netlify.app/
 
 ## What is this project?
 
