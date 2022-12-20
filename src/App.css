@@ -223,7 +223,9 @@ button {
 /* From remote: add 'metric' styles to increase font size: */
 
 .metric {
-    font-size: 2rem;
+    font-size: 1.3rem;
+    font-weight: 800;
+}
 
 .div-container {
     margin: 0.3rem;
