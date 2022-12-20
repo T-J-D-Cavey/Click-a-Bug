@@ -135,7 +135,7 @@ table {
 
     100% {
         translate: 0px;
-        rotate: 0.1turn;
+        rotate: 0.015turn;
     }
 }
 
@@ -223,7 +223,7 @@ button {
 /* From remote: add 'metric' styles to increase font size: */
 
 .metric {
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 800;
 }
 
@@ -245,6 +245,25 @@ button {
 
 .imageAttributes {
     font-size: 0.5rem;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: #84EB00;
+}
+
+.explainer {
+    border-top: 0.5px solid #89209E;
+    border-bottom: 1px solid #89209E;
+    margin: 1rem auto;
+}
+
+.homepageBug {
+    margin: 5px auto;
+    width: 40px;
 }
 
 /* ---------------------- => Media query for desktop sizes: => */

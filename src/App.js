@@ -39,7 +39,7 @@ function App() {
     }, [liveGame])
   // Redirects to page unknown page when timer runs out or all lives are lost, and sets gameLive status to false, cleans up setInterval
     useEffect(() => {
-        if (countdown <= 0 || livesLeft < 1) {
+        if (liveGame && countdown <= 0 || liveGame && livesLeft < 1) {
             clearInterval(timerId.current);
             dispatch(endGame());
             setCountdown(180);

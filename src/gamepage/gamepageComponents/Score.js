@@ -1,11 +1,16 @@
 import { useSelector} from 'react-redux';
-import { scoreSelector } from '../../redux/scoreSlice';
+import { scoreSelector, didScoreIncreaseSelector } from '../../redux/scoreSlice';
 
 export function Score() {
     const currentScore = useSelector(scoreSelector);
+    const scoreIncreased = useSelector(didScoreIncreaseSelector);
     
-//     From remote: added the 'metric' className:
-    return (
-        <div className='metric' >{currentScore}</div>
+    if (scoreIncreased) {
+       return (
+           <div className='metric green' >{currentScore}</div>
+       )        
+    } return (
+        <div className='metric red' >{currentScore}</div>
     )
+
 }

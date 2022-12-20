@@ -4,11 +4,23 @@ import { liveGameSelector } from "../../redux/gridSlice";
 export function Timer({timer}) {
 
     const liveGame = useSelector(liveGameSelector);
-    
-//     From remote: added 'metric' className:
-    return (
-        <div>
-            {!liveGame? <div>⏰</div> : <div className='metric'>{timer}</div>}
-        </div>
+
+    if (!liveGame) {
+        return (
+            <div>
+              <div>⏰</div>  
+            </div> 
+        )
+    } 
+    else if (timer < 60) {
+        return (
+            <div>
+              <div className='metric red'>{timer}</div>  
+            </div> 
+        )
+    }   return (
+            <div>
+                <div className='metric'>{timer}</div>
+            </div>
     )
 }
