@@ -3,7 +3,8 @@ import {createSlice} from "@reduxjs/toolkit";
 const initialState = {
     score: 0, 
     completed: false,
-    livesLeft: 5
+    livesLeft: 5,
+    didScoreIncrease: true
 }
 
 export const scoreSlice = createSlice({
@@ -19,13 +20,16 @@ export const scoreSlice = createSlice({
         resetScore: (state) => {
             state.score = 0;
             state.completed = false;
-            state.livesLeft = 5
+            state.livesLeft = 5;
         },
         completedGame: (state) => {
             state.completed = true;
         },
         loseALife: (state) => {
-          state.livesLeft -= 1 
+          state.livesLeft -= 1 ;
+        },
+        setDidScoreIncrease: (state, action) => {
+            state.didScoreIncrease = action.payload;
         }
     }
 });
@@ -42,6 +46,10 @@ export const completedSelector = (state) => {
     return state.score.completed;
 }
 
-export const {increaseScore, decreaseScore, resetScore, completedGame, loseALife} = scoreSlice.actions;
+export const didScoreIncreaseSelector = (state) => {
+    return state.score.didScoreIncrease;
+}
+
+export const {increaseScore, decreaseScore, resetScore, completedGame, loseALife, setDidScoreIncrease} = scoreSlice.actions;
 
 export const scoreReducer = scoreSlice.reducer;
