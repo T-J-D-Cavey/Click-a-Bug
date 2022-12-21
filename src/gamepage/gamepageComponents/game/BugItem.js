@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import {increaseScore, scoreSelector, loseALife} from '../../../redux/scoreSlice';
+import {increaseScore, scoreSelector, loseALife, setDidScoreIncrease, decreaseScore} from '../../../redux/scoreSlice';
 import { randomIndexForBugItemSelector } from '../../../redux/gridSlice';
 
 import bug1 from '../../../Resources/Images/bug1.svg';
@@ -33,12 +33,15 @@ export function BugItem({handleDispatch, showingBug}) {
         e.preventDefault();
         handleDispatch();
         dispatch(increaseScore());
+        dispatch(setDidScoreIncrease(true));
     }
 
     const handleBadClick = (e) => {
         e.preventDefault();
         handleDispatch();
         dispatch(loseALife());
+        dispatch(decreaseScore());
+        dispatch(setDidScoreIncrease(false));
     }
 
 

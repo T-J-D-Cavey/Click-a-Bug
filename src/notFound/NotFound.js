@@ -10,7 +10,7 @@ export function NotFound() {
     useEffect(() => {
         const interval = setInterval(() => {
             navigate('/');
-        }, 3000)
+        }, 4000)
         return () => clearInterval(interval)
     }, [])
 
