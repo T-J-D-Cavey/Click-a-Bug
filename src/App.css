@@ -256,14 +256,21 @@ button {
 }
 
 .explainer {
-    border-top: 0.5px solid #89209E;
-    border-bottom: 1px solid #89209E;
+    border: 0.5px dashed #89209E;
     margin: 1rem auto;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    font-style: italic;
+    font-size: 0.9rem;
 }
 
 .homepageBug {
     margin: 5px auto;
     width: 40px;
+}
+
+.hearts {
+    margin-top: 1rem;
 }
 
 /* ---------------------- => Media query for desktop sizes: => */
@@ -286,16 +293,43 @@ button {
     left: 0rem;
     top:3rem;
     width: 10px;
-    animation: bugmove 50s infinite ease-in-out;
+    animation: bugmove1 50s infinite ease-in-out;
 }
 
-@keyframes bugmove {
+.BugTwo {
+    position: sticky;
+    rotate: -0.25turn;
+    left: 105%;
+    top: 1rem;
+    width: 10px;
+    animation: bugmove2 20s infinite ease-in-out;
+}
+
+
+@keyframes bugmove1 {
     0% {
-        
     }
 
     100% {
         translate: 0 90vh;
+    }
+}
+
+@keyframes bugmove2 { 
+    0% {
+        translate: 100% 0;
+        rotate: -0.25turn; 
+    }   
+    90% {
+        translate: -8vw 0;
+        rotate: -0.25turn;
+    }
+    91% {
+        rotate: 0.25turn;
+    }
+    100% {
+        translate: 100% 0;
+        rotate: 0.25turn;
     }
 }
 
