@@ -23,7 +23,7 @@ export function Homepage() {
                         Get ready to click whenever you see a bug.</p>
                     <p className='explainer'>Explainer: This is an example of a bug: <br/>
                     <img className='homepageBug' src={bug4} alt='bug'></img></p>
-                    <p className='intro'>You'll only have a few minutes till they destroy everything, so you better be quick!</p>
+                    <p className='intro'>You'll only have a few minutes until they destroy everything, so you better be quick!</p>
                     <p className='explainer'>Explainer: you have 180 seconds to score 1000 points.</p> 
                         <p className='intro'>But watch out, some things shouldn't be clicked!
                         If you cause too much damage we'll need to replace you...
