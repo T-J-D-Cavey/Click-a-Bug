@@ -8,7 +8,7 @@ Click here and have a go: https://click-a-bug.netlify.app/
 
 Click-a-bug is a single-page-application (SPA) project showcasing React and Redux managing an app with complex state. 
 
-The app imitates a 'whack-a-mole' game, where users see a grid (of servers) and have to 'click' (or tap) on any bugs that appear. There's a timer, a score and a lives-left metric. Click on the wrong thing or take too long, and the bugs will taker over!
+The app imitates a 'whack-a-mole' game, where users see a grid (of servers) and have to 'click' (or tap) on any bugs that appear. There's a timer, a score and a lives-left metric. Click on the wrong thing or take too long, and the bugs will take over!
 
 ## Why was this project made?
 
